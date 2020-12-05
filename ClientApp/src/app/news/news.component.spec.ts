@@ -2,8 +2,10 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { MatTableModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
-
+import { InjectionToken } from '@angular/core';
 import { NewsComponent } from './news.component';
+
+export const BASE_URL = new InjectionToken<string>('BASE_URL');
 
 describe('NewsComponent', () => {
   let component: NewsComponent;
@@ -13,6 +15,9 @@ describe('NewsComponent', () => {
     TestBed.configureTestingModule({
       declarations: [NewsComponent],
       imports: [MatTableModule, HttpClientModule],
+      providers: [
+        { provide: BASE_URL, useValue: 'http://localhost' },
+        NewsComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
     .compileComponents();
