@@ -1,0 +1,37 @@
+<h1 id="tableLabel">News</h1>
+
+<p *ngIf="!dataSource"><em>Loading... Please wait</em></p>
+
+
+<!-- Search field -->
+<div class="search ml-2 mt-3">
+  <mat-form-field>
+    <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder='Search'>
+  </mat-form-field>
+</div>
+
+<!-- Pagination,  with 20 items as default value -->
+<mat-paginator [pageSizeOptions]="[20, 10, 5, 25]" showFirstLastButtons></mat-paginator>
+
+<!-- Table with the newest stories -->
+<mat-table [dataSource]="dataSource" class="table">
+
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef class="header">Author</mat-header-cell>
+    <mat-cell *matCellDef="let news">{{news.By}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="title">
+    <mat-header-cell *matHeaderCellDef class="header">Title</mat-header-cell>
+    <mat-cell *matCellDef="let news">{{news.Title}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="url">
+    <mat-header-cell *matHeaderCellDef class="header">Link</mat-header-cell>
+    <mat-cell *matCellDef="let news">
+      <div *ngIf="news.Url === null">No Link available!</div>
+      <a href="{{news.Url}}">{{news.Url}}</a>
+    </mat-cell>
+  </ng-container>
+  <mat-header-row *matHeaderRowDef="displayedColumns" class="table-success"></mat-header-row>
+  <mat-row *matRowDef="let row; columns:displayedColumns;"></mat-row>
+</mat-table>
+

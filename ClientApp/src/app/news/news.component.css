@@ -1,0 +1,19 @@
+.mat-column-id {
+    flex: 0 0 20%;
+}
+
+.mat-cell {
+  padding-left: 15px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+mat-header-cell {
+    padding-left: 15px;
+}
+.mat-column-url {
+    word-wrap: break-word !important;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
