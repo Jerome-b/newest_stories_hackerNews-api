@@ -70,6 +70,7 @@ namespace Nextechapp.Controllers
                         var content = httpResponseMessage.Content;
                         NewStoriesModel result = await content.ReadAsAsync<NewStoriesModel>();
                         newStories.Add(result);
+                        _memoryCache.Set("newestStories_withContent", newStories);
 
                     }
                     else
@@ -98,7 +99,11 @@ namespace Nextechapp.Controllers
         {
             await LoadNews();
             await LoadAllNews();
-            string output = JsonConvert.SerializeObject(_memoryCache.Get("newestStories_withContent"));
+            string output = JsonConvert.SerializeObject(_memoryCache.Get("newestStories_withContent"), new JsonSerializerSettings()
+            {
+                // remove null values
+                NullValueHandling = NullValueHandling.Ignore
+            });
             return output;
 
         }

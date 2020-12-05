@@ -1,5 +1,12 @@
 .mat-column-author {
-    flex: 0 0 20%;
+  flex: 0 0 15%;
+  word-wrap: break-word !important;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.mat-column-date {
+    flex: 0 0 15%;
 }
 
 .mat-cell {
@@ -11,6 +18,7 @@
 mat-header-cell {
     padding-left: 15px;
 }
+
 .mat-column-url {
     word-wrap: break-word !important;
     word-wrap: break-word;

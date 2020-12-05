@@ -10,11 +10,11 @@ import { MatPaginator } from '@angular/material/paginator';
 })
 export class NewsComponent implements OnInit {
 
-  dataSource;
+  dataSource: MatTableDataSource<NewStoriesModel>;
   news: NewStoriesModel[];
-  displayedColumns: string[] = ['id', 'title', 'url'];
+  displayedColumns: string[] = ['author', 'date', 'title', 'url'];
 
-  constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string) {
+  constructor(private http: HttpClient) {
   }
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
@@ -27,21 +27,22 @@ export class NewsComponent implements OnInit {
     this.getStories();
   }
 
-
-  async getStories() {
-    await this.http.get<NewStoriesModel[]>(this.baseUrl + 'newstories').subscribe(news => {
+  getStories() {
+    this.http.get<NewStoriesModel[]>('/newstories').subscribe(news => {
+      console.log(news);
       this.dataSource = new MatTableDataSource<NewStoriesModel>(news);
       this.dataSource.paginator = this.paginator;
     }, error => console.error(error));
-  }
 
   }
 
-  
-interface NewStoriesModel {
-  By: string;
-  Title: string;
-  Url: string;
+}
+
+export interface NewStoriesModel {
+  by: string;
+  time: number;
+  title: string;
+  url: string;
 }
 
 
