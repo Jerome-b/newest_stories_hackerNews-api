@@ -1,4 +1,4 @@
-<h1 id="tableLabel">News</h1>
+<h1 id="tableLabel">Counter</h1>
 
 <p *ngIf="!dataSource"><em>Loading... Please wait</em></p>
 
@@ -16,16 +16,16 @@
 <!-- Table with the newest stories -->
 <mat-table [dataSource]="dataSource" class="table">
 
-  <ng-container matColumnDef="id">
-    <mat-header-cell *matHeaderCellDef class="header">Author</mat-header-cell>
+  <ng-container matColumnDef="author">
+    <mat-header-cell *matHeaderCellDef class="headerauthor">Author</mat-header-cell>
     <mat-cell *matCellDef="let news">{{news.By}}</mat-cell>
   </ng-container>
   <ng-container matColumnDef="title">
-    <mat-header-cell *matHeaderCellDef class="header">Title</mat-header-cell>
+    <mat-header-cell *matHeaderCellDef class="headertitle">Title</mat-header-cell>
     <mat-cell *matCellDef="let news">{{news.Title}}</mat-cell>
   </ng-container>
   <ng-container matColumnDef="url">
-    <mat-header-cell *matHeaderCellDef class="header">Link</mat-header-cell>
+    <mat-header-cell *matHeaderCellDef class="headerlink">Link</mat-header-cell>
     <mat-cell *matCellDef="let news">
       <div *ngIf="news.Url === null">No Link available!</div>
       <a href="{{news.Url}}">{{news.Url}}</a>

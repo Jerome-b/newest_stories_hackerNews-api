@@ -1,16 +1,12 @@
-import { Component, Inject, OnInit, ViewChild, InjectionToken } from '@angular/core';
+import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
-
-export const BASE_URL = new InjectionToken<string>('BASE_URL');
 
 @Component({
   selector: 'app-news',
   templateUrl: './news.component.html',
   styleUrls: ['./news.component.css'],
-  providers: [{provide: BASE_URL, useValue: 'http://localhost'}]
-
 })
 export class NewsComponent implements OnInit {
 
