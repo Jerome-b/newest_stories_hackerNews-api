@@ -9,7 +9,6 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { NewsComponent } from './news/news.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -35,7 +34,6 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
       { path: 'news', component: NewsComponent },
     ]),
     BrowserAnimationsModule,
-    NoopAnimationsModule,
     MatTableModule,
     MatPaginatorModule,
     MatFormFieldModule,

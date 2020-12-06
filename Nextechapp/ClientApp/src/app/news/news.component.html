@@ -6,7 +6,6 @@
 </p>
 
 
-
 <!-- Search field -->
 <div class="search ml-2 mt-3">
   <mat-form-field>
@@ -16,7 +15,7 @@
 </div>
 
 <!-- Pagination  -->
-<mat-paginator #paginator [pageSizeOptions]="[5, 10, 20, 25]" showFirstLastButtons></mat-paginator>
+<mat-paginator #paginator [pageSizeOptions]="[20, 5, 10, 35, 50]" showFirstLastButtons></mat-paginator>
 
 <!-- Table with the newest stories -->
 <mat-table [dataSource]="dataSource" class="table">
@@ -51,4 +50,3 @@
   <mat-header-row id="row" *matHeaderRowDef="displayedColumns" class="table-success"></mat-header-row>
   <mat-row id="row" *matRowDef="let row; columns:displayedColumns;"></mat-row>
 </mat-table>
-

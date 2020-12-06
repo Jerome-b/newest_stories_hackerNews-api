@@ -38,6 +38,7 @@ namespace Nextechapp.Controllers
                 {
                     var content = httpResponseMessage.Content;
                     data = await content.ReadAsStringAsync();
+                    // store result in cache with sliding expiration time of 60s
                     var cacheEntryOptions = new MemoryCacheEntryOptions().SetSlidingExpiration(TimeSpan.FromSeconds(60));
                     _memoryCache.Set("newestStories_array_id", data, cacheEntryOptions);
                 }
@@ -47,7 +48,7 @@ namespace Nextechapp.Controllers
                 }
 
             }
-            return _memoryCache.Get("newestStories_array_id").ToString();
+            return data;
         }
 
         // method to get the corresponding stories from the array of ids retrieved in LoadNews()
@@ -79,7 +80,9 @@ namespace Nextechapp.Controllers
                         throw new Exception(httpResponseMessage.ReasonPhrase);
                     }
                 }
-                var cacheEntryOptions = new MemoryCacheEntryOptions().SetSlidingExpiration(TimeSpan.FromSeconds(50));
+
+                // store result in cache with sliding expiration time of 60s
+                var cacheEntryOptions = new MemoryCacheEntryOptions().SetSlidingExpiration(TimeSpan.FromSeconds(60));
                 _memoryCache.Set("newestStories_withContent", newStories, cacheEntryOptions);
 
        

@@ -31,6 +31,7 @@ export class NewsComponent implements OnInit {
     this.http.get<NewStoriesModel[]>('/newstories').subscribe(result => {
       this.dataSource = new MatTableDataSource<NewStoriesModel>(result);
       this.dataSource.paginator = this.paginator;
+      
     }, error => console.error(error));
 
   }
