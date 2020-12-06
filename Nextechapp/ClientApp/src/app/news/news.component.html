@@ -19,34 +19,48 @@
 
 <!-- Table with the newest stories -->
 <mat-table [dataSource]="dataSource" class="table">
+
+  <!-- author column -->
   <ng-container matColumnDef="author">
     <mat-header-cell *matHeaderCellDef class="headerauthor">Author</mat-header-cell>
     <mat-cell *matCellDef="let news">
       {{news.By}}
+      <!-- fill the cell with default value in case there is no author-->
       <div *ngIf="news.By === undefined">No Author available!</div>
     </mat-cell>
   </ng-container>
+
+  <!-- date column -->
   <ng-container matColumnDef="date">
     <mat-header-cell *matHeaderCellDef class="headerdate">Date</mat-header-cell>
     <mat-cell *matCellDef="let news">
+      <!-- Convert Unix time in a universal format -->
       {{news.Time * 1000 | date:'dd/MM/yyyy'}}
+      <!-- fill the cell with default value in case there is no date-->
       <div *ngIf="news.Time === undefined">No Date available!</div>
     </mat-cell>
   </ng-container>
+
+  <!-- title column -->
   <ng-container matColumnDef="title">
     <mat-header-cell *matHeaderCellDef class="headertitle">Title</mat-header-cell>
     <mat-cell *matCellDef="let news">
       {{news.Title}}
+      <!-- fill the cell with default value in case there is title-->
       <div *ngIf="news.Title === undefined">No Title available!</div>
     </mat-cell>
   </ng-container>
+
+  <!-- url column -->
   <ng-container matColumnDef="url">
     <mat-header-cell *matHeaderCellDef class="headerlink">Link</mat-header-cell>
     <mat-cell *matCellDef="let news">
-      <div *ngIf="news.Url === undefined">No Link available!</div>
       <a href="{{news.Url}}">{{news.Url}}</a>
+      <!-- fill the cell with default value in case there is no link-->
+      <div *ngIf="news.Url === undefined">No Link available!</div>
     </mat-cell>
   </ng-container>
+
   <mat-header-row id="row" *matHeaderRowDef="displayedColumns" class="table-success"></mat-header-row>
   <mat-row id="row" *matRowDef="let row; columns:displayedColumns;"></mat-row>
 </mat-table>
