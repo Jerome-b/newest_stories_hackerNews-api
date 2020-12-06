@@ -2,7 +2,7 @@
 
 Hello!
 
-Welcome to my web application\
+Welcome to my web application
 
 It is accessible at https://neweststorieshackernews.azurewebsites.net/
 ### You will be required to download .Net Core Runtime to access the app
