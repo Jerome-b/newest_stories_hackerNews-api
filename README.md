@@ -16,8 +16,8 @@ I am using C#/.Net Core as backend, and Angular as frontend.
 * Here's a tutorial on how to do it: https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/
 
 2. ## .NET Core 3.1&nbsp;
-* Download here: https://dotnet.microsoft.com/download/dotnet-core \
-* Add C:\Program Files\dotnet to your Path variable.
+* Download here: https://dotnet.microsoft.com/download/dotnet-core 
+* Add C:\Program Files\dotnet\ to your Path variable.
  
 # How to run the app
 
