@@ -2,13 +2,18 @@
 
 Hello!
 
-Welcome to my web application,
+Welcome to my web application\
+
+It is accessible at https://neweststorieshackernews.azurewebsites.net/
+### You will be required to download .Net Core Runtime to access the app
+Download link: https://dotnet.microsoft.com/download/dotnet-core/current/runtime
 
 This app fetches data from the Hacker News public api and displays the results in a table.
 
 I am using C#/.Net Core as backend, and Angular as frontend.
 
-# Requirements
+# How to run locally
+## Requirements
 
 1. ## Node.js 14.15.1
 * Download here: https://nodejs.org/en/ 
@@ -19,7 +24,7 @@ I am using C#/.Net Core as backend, and Angular as frontend.
 * Download here: https://dotnet.microsoft.com/download/dotnet-core 
 * Add C:\Program Files\dotnet\ to your Path variable.
  
-# How to run the app
+## How to run the app
 
 1. Clone the repo
 2. Open command prompt
@@ -29,14 +34,14 @@ I am using C#/.Net Core as backend, and Angular as frontend.
 6. Launch app with 'dotnet run' at this path C:\Users\'your user'\newest_stories_hackerNews-api\ \
 (News page will take some time to load)
 
-# How to run test cases
+## How to run test cases
 
-### Backend tests
+#### Backend tests
 1. Open command prompt
 2. Go to the app folder C:\Users\'your user'\newest_stories_hackerNews-api\
 3. Run 'dotnet test'
 
-### Frontend tests
+#### Frontend tests
 1. Open command prompt
 2. Go to the app folder C:\Users\'your user'\newest_stories_hackerNews-api\ClientApp\
 3. Run 'npm run ng test'
