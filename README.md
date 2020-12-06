@@ -11,7 +11,7 @@ I am using C#/.Net Core as backend, and Angular as frontend.
 # Requirements
 
 1. ## Node.js 14.15.1
-* Download here: https://nodejs.org/en/ \
+* Download here: https://nodejs.org/en/ 
 * Add C:\Program Files\nodejs\ to your Path variable on the "User variable" section of the Environment Variables on the System Properties.\
 * Here's a tutorial on how to do it: https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/
 
