@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
@@ -11,7 +11,6 @@ import { MatPaginator } from '@angular/material/paginator';
 export class NewsComponent implements OnInit {
 
   dataSource: MatTableDataSource<NewStoriesModel>;
-  news: NewStoriesModel[];
   displayedColumns: string[] = ['author', 'date', 'title', 'url'];
 
   constructor(private http: HttpClient) {
@@ -28,9 +27,8 @@ export class NewsComponent implements OnInit {
   }
 
   getStories() {
-    this.http.get<NewStoriesModel[]>('/newstories').subscribe(news => {
-      console.log(news);
-      this.dataSource = new MatTableDataSource<NewStoriesModel>(news);
+    this.http.get<NewStoriesModel[]>('/newstories').subscribe(result => {
+      this.dataSource = new MatTableDataSource<NewStoriesModel>(result);
       this.dataSource.paginator = this.paginator;
     }, error => console.error(error));
 
@@ -38,11 +36,11 @@ export class NewsComponent implements OnInit {
 
 }
 
-export interface NewStoriesModel {
-  by: string;
-  time: number;
-  title: string;
-  url: string;
+interface NewStoriesModel {
+  By: string;
+  Time: number;
+  Title: string;
+  Url: string;
 }
 
 

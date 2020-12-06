@@ -4,6 +4,7 @@ import { MatTableModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { NewsComponent } from './news.component';
 
+
 describe('NewsComponent', () => {
   let component: NewsComponent;
   let fixture: ComponentFixture<NewsComponent>;
@@ -51,5 +52,6 @@ describe('NewsComponent', () => {
     const headerName = fixture.nativeElement.querySelector('.headerlink').textContent;
     expect(headerName).toEqual('Link');
   }));
+
 
 });

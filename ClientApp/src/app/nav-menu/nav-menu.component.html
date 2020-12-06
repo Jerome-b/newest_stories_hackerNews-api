@@ -3,7 +3,7 @@
     class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"
   >
     <div class="container">
-      <a class="navbar-brand" [routerLink]="['/']">Jerome Bui app</a>
+      <a class="navbar-brand" routerLinkActive="link-active" [routerLinkActiveOptions]="{ exact: true }" routerLink="/">Jerome Bui app</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -19,13 +19,13 @@
         <ul class="navbar-nav flex-grow">
           <li
             class="nav-item"
-            [routerLinkActive]="['link-active']"
+            routerLinkActive="link-active"
             [routerLinkActiveOptions]="{ exact: true }"
           >
-            <a class="nav-link text-dark" [routerLink]="['/']">Home</a>
+            <a class="nav-link text-dark" routerLink="/">Home</a>
           </li>
-          <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/news']">News</a>
+          <li class="nav-item" routerLinkActive="link-active">
+            <a class="nav-link text-dark" routerLink="/news">News</a>
           </li>
         </ul>
       </div>
