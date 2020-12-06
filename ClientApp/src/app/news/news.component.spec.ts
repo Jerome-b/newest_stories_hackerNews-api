@@ -33,22 +33,22 @@ describe('NewsComponent', () => {
     expect(titlePage).toEqual('News');
   }));
 
-  it('table should display a header named Author', async(() => {
+  it('should display a header named author', async(() => {
     const headerName = fixture.nativeElement.querySelector('.headerauthor').textContent;
     expect(headerName).toEqual('Author');
   }));
 
-  it('table should display a header named Date', async(() => {
+  it('should display a header named date', async(() => {
     const headerName = fixture.nativeElement.querySelector('.headerdate').textContent;
     expect(headerName).toEqual('Date');
   }));
 
-  it('table should display a header named Title', async(() => {
+  it('should display a header named title', async(() => {
     const headerName = fixture.nativeElement.querySelector('.headertitle').textContent;
     expect(headerName).toEqual('Title');
   }));
 
-  it('table should display a header named Link', async(() => {
+  it('should display a header named link', async(() => {
     const headerName = fixture.nativeElement.querySelector('.headerlink').textContent;
     expect(headerName).toEqual('Link');
   }));

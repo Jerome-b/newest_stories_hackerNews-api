@@ -45,8 +45,9 @@ namespace Nextechapp.Controllers
                 {
                     throw new Exception(httpResponseMessage.ReasonPhrase);
                 }
+
             }
-            return data;
+            return _memoryCache.Get("newestStories_array_id").ToString();
         }
 
         // method to get the corresponding stories from the array of ids retrieved in LoadNews()
@@ -81,17 +82,15 @@ namespace Nextechapp.Controllers
                 var cacheEntryOptions = new MemoryCacheEntryOptions().SetSlidingExpiration(TimeSpan.FromSeconds(50));
                 _memoryCache.Set("newestStories_withContent", newStories, cacheEntryOptions);
 
+       
             }
 
             return newStories;
         }
 
-        private readonly ILogger<NewStoriesController> _logger;
-
-        public NewStoriesController(ILogger<NewStoriesController> logger, IMemoryCache cache)
+        public NewStoriesController(IMemoryCache cache)
         {
             _memoryCache = cache;
-            _logger = logger;
         }
 
         [HttpGet]
