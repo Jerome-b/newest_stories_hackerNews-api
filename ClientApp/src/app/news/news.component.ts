@@ -10,12 +10,6 @@ import { MatPaginator } from '@angular/material/paginator';
 })
 export class NewsComponent implements OnInit {
 
-  // mat paginator config
-  pageIndex = 0;
-  pageSize = 10;
-  length = 200;
-  pageEvent = jasmine.createSpy('page event');
-
   dataSource: MatTableDataSource<NewStoriesModel>;
   displayedColumns: string[] = ['author', 'date', 'title', 'url'];
   searchValue: String = "";

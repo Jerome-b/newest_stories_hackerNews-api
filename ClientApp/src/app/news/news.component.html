@@ -16,13 +16,7 @@
 </div>
 
 <!-- Pagination  -->
-<mat-paginator #paginator [pageSizeOptions]="[5, 10, 20, 25]"
-               showFirstLastButtons
-               [pageIndex]="pageIndex"
-               [pageSize]="pageSize"
-               [length]="length"
-               (page)="pageEvent($event)"
-               ></mat-paginator>
+<mat-paginator #paginator [pageSizeOptions]="[5, 10, 20, 25]" showFirstLastButtons></mat-paginator>
 
 <!-- Table with the newest stories -->
 <mat-table [dataSource]="dataSource" class="table">
