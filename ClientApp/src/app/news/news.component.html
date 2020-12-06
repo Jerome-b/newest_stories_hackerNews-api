@@ -10,13 +10,19 @@
 <!-- Search field -->
 <div class="search ml-2 mt-3">
   <mat-form-field>
-    <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder='Search'>
+    <input matInput type="text" (keyup)="doFilter($event.target.value)" [(ngModel)]="searchValue" placeholder='Search'>
     <mat-icon matSuffix>search</mat-icon>
   </mat-form-field>
 </div>
 
-<!-- Pagination,  with 20 items as default value -->
-<mat-paginator #paginator [pageSizeOptions]="[20, 10, 5, 25]" showFirstLastButtons></mat-paginator>
+<!-- Pagination  -->
+<mat-paginator #paginator [pageSizeOptions]="[5, 10, 20, 25]"
+               showFirstLastButtons
+               [pageIndex]="pageIndex"
+               [pageSize]="pageSize"
+               [length]="length"
+               (page)="pageEvent($event)"
+               ></mat-paginator>
 
 <!-- Table with the newest stories -->
 <mat-table [dataSource]="dataSource" class="table">

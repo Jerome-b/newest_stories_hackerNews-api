@@ -10,6 +10,7 @@ import { NewsComponent } from '../news/news.component';
 
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { MatTableModule } from '@angular/material';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -27,8 +28,13 @@ describe('NavMenuComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule.withRoutes(routes), MatTableModule],
-      declarations: [NavMenuComponent, RouterLinkStubDirective, HomeComponent, NewsComponent],
+      imports: [RouterTestingModule.withRoutes(routes), MatTableModule, FormsModule],
+      declarations: [
+        NavMenuComponent,
+        RouterLinkStubDirective,
+        HomeComponent,
+        NewsComponent,
+      ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
     .compileComponents();
