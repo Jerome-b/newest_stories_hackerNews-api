@@ -9,6 +9,7 @@ It is accessible at https://neweststorieshackernews.azurewebsites.net/
 Download link: https://dotnet.microsoft.com/download/dotnet-core/current/runtime
 
 This app fetches data from the Hacker News public api and displays the results in a table.
+Hacker News api: https://github.com/HackerNews/API
 
 I am using C#/.Net Core as backend, and Angular as frontend.
 
@@ -31,9 +32,9 @@ I am using C#/.Net Core as backend, and Angular as frontend.
 
 1. Open command prompt 
 2. Clone the repo by running 'git clone https://github.com/Jerome-b/newest_stories_hackerNews-api.git'
-3. Go to the application folder: 'cd newest_stories_hackerNews-api\Nextechapp\'
-4. Run 'npm uninstall node-gyp'
-5. Run 'npm install @angular-devkit/build-angular'
+3. Go to the application folder: 'cd newest_stories_hackerNews-api\Nextechapp\ClientApp'
+4. Run 'npm install' to install the packages and dependencies
+5. Run 'cd ../'
 6. Launch app with 'dotnet run' 
 7. Open your web browser and go to https://localhost:5001/
 (News page can take some time to load)
