@@ -39,7 +39,7 @@ namespace Nextechapp.Controllers
                     var content = httpResponseMessage.Content;
                     data = await content.ReadAsStringAsync();
                     // store result in cache with sliding expiration time of 60s
-                    var cacheEntryOptions = new MemoryCacheEntryOptions().SetSlidingExpiration(TimeSpan.FromSeconds(60));
+                    var cacheEntryOptions = new MemoryCacheEntryOptions().SetSlidingExpiration(TimeSpan.FromSeconds(10));
                     _memoryCache.Set("newestStories_array_id", data, cacheEntryOptions);
                 }
                 else
@@ -72,8 +72,6 @@ namespace Nextechapp.Controllers
                         var content = httpResponseMessage.Content;
                         NewStoriesModel result = await content.ReadAsAsync<NewStoriesModel>();
                         newStories.Add(result);
-                        _memoryCache.Set("newestStories_withContent", newStories);
-
                     }
                     else
                     {
@@ -82,10 +80,9 @@ namespace Nextechapp.Controllers
                 }
 
                 // store result in cache with sliding expiration time of 60s
-                var cacheEntryOptions = new MemoryCacheEntryOptions().SetSlidingExpiration(TimeSpan.FromSeconds(60));
+                var cacheEntryOptions = new MemoryCacheEntryOptions().SetSlidingExpiration(TimeSpan.FromSeconds(10));
                 _memoryCache.Set("newestStories_withContent", newStories, cacheEntryOptions);
 
-       
             }
 
             return newStories;
