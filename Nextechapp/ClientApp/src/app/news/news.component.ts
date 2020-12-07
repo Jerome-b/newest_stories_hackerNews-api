@@ -14,8 +14,7 @@ export class NewsComponent implements OnInit {
   displayedColumns: string[] = ['author', 'date', 'title', 'url'];
   searchValue: String = "";
 
-  constructor(private http: HttpClient) {
-  }
+  constructor(private http: HttpClient) { }
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
