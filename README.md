@@ -31,7 +31,7 @@ I am using C#/.Net Core as backend, and Angular as frontend.
 
 1. Open command prompt 
 2. Clone the repo by running 'git clone https://github.com/Jerome-b/newest_stories_hackerNews-api.git'
-3. Go to the application folder: 'cd newest_stories_hackerNews-api\Nextechapp\
+3. Go to the application folder: 'cd newest_stories_hackerNews-api\Nextechapp\'
 4. Run 'npm uninstall node-gyp'
 5. Run 'npm install @angular-devkit/build-angular'
 6. Launch app with 'dotnet run' 
@@ -42,12 +42,12 @@ I am using C#/.Net Core as backend, and Angular as frontend.
 
 #### Backend tests
 1. Open command prompt
-2. Go to the app test folder: 'cd newest_stories_hackerNews-api\NewStoriesTests\
+2. Go to the app test folder: 'cd newest_stories_hackerNews-api\NewStoriesTests\'
 3. Run 'dotnet test'
 
 #### Frontend tests
 1. Open command prompt
-2. Go to the app folder: 'cd newest_stories_hackerNews-api\Nextechapp\ClientApp\
+2. Go to the app folder: 'cd newest_stories_hackerNews-api\Nextechapp\ClientApp\'
 3. Run 'npm run ng test'
 4. Wait for your web browser to load the test page
 
